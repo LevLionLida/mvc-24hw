@@ -72,7 +72,7 @@ class Migration
 
     protected function createMigrationsTable()
     {
-        $script = file_get_contents(self::SCRIPT_DIR . 'migrations.sql');
+        $script = file_get_contents(self::SCRIPT_DIR . '0_migrations.sql');
         $query = Db::connect()->prepare($script);
         if ($query->execute()) {
             d('#Migrations table was created');
